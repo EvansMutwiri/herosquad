@@ -41,7 +41,7 @@ class HeroTest {
 
     @Test
     public void AllHerosContainsAllHeros_true() {
-        Hero post = new Hero("Hero Nakamora");
+        Hero post = new Hero("Hero Nakamura");
         Hero otherHero = new Hero("Captain Ameruca");
         assertTrue(Hero.getAll().contains(post));
         assertTrue(Hero.getAll().contains(otherHero));
@@ -49,7 +49,7 @@ class HeroTest {
 
     @Test
     public void getPublished_isFalseAfterInstantiation_false() throws Exception {
-        Hero myHero = new Hero("Hero Nakamora");
+        Hero myHero = new Hero("Hero Nakamura");
         assertEquals(false, myHero.getPublished());
     }
 
@@ -60,13 +60,13 @@ class HeroTest {
     }
 
     public Hero setupNewHero(){
-        return new Hero("Hero Nakamora");
+        return new Hero("Hero Nakamura");
     }
 
     @Test
     public void getId_postsInstantiateWithAnID_1() throws Exception{
         Hero.clearAllHeros();
-        Hero myHero = new Hero("Hero Nakamora");
+        Hero myHero = new Hero("Hero Nakamura");
         assertEquals(1, myHero.getId());
     }
 
@@ -81,5 +81,19 @@ class HeroTest {
         Hero post = setupNewHero();
         Hero otherHero = new Hero("Captain Ameruca");
         assertEquals(2, Hero.findById(otherHero.getId()).getId());
+    }
+
+    @Test
+    public void updateChangesHero() throws Exception {
+        Hero post = setupNewHero();
+        String formerContent = post.getContent();
+        LocalDateTime formerDate = post.getCreatedAt();
+        int formerId = post.getId();
+
+        post.update("Some hero");
+
+        assertEquals(formerId, post.getId());
+        assertEquals(formerDate, post.getCreatedAt());
+        assertNotEquals(formerContent, post.getContent());
     }
 }

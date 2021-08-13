@@ -45,5 +45,9 @@ public class Hero {
     public static Hero findById(int id){
         return instances.get(id-1);
     }
+
+    public void update(String content) {
+        this.content = content;
+    }
 }
 

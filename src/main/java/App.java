@@ -40,7 +40,17 @@ public class App {
             int idOfHeroToFind = Integer.parseInt(req.params(":id"));
             Hero foundHero = Hero.findById(idOfHeroToFind);
             model.put("post", foundHero); //add it to model for template to display
-            return new ModelAndView(model, "post-detail.hbs");
+            return new ModelAndView(model, "herodetail.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //Update get
+
+        get("/posts/:id/update", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToEdit = Integer.parseInt(req.params("id"));
+            Hero editHero = Hero.findById(idOfHeroToEdit);
+            model.put("editHero", editHero);
+            return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
 
     }
