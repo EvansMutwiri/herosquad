@@ -60,7 +60,10 @@ public class App {
             Hero editHero = Hero.findById(idOfHeroToEdit);
 
             editHero.update(newContent);
-            return new ModelAndView(model, "success.hbs");
+            return new ModelAndView(model, "edited.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+
     }
 }
