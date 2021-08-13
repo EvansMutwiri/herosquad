@@ -49,5 +49,9 @@ public class Hero {
     public void update(String content) {
         this.content = content;
     }
+
+    public void deleteHero() {
+        instances.remove(id-1);
+    }
 }
 
