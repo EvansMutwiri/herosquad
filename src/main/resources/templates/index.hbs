@@ -4,13 +4,11 @@
 
     {{#if posts}}
         {{#each posts }}
-         <p>{{ content }}<a href="/posts/{{id}}">read more...</a></p>
+         <p>{{ content }}  <a href="/posts/{{id}}">read more...</a></p>
         {{/each}}
     {{else}}
-    <p>No heros found!</p>
+    <p>No heros found! <a href="/posts/new">  Create hero here</a></p>
     {{/if}}
-
-    <p>Add a new Hero:</p>
 {{/partial}}
 
 {{> layout.hbs}}

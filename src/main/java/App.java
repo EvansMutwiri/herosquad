@@ -34,7 +34,14 @@ public class App {
             return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //Update
+        //Read
+        get("/posts/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToFind = Integer.parseInt(req.params(":id"));
+            Hero foundHero = Hero.findById(idOfHeroToFind);
+            model.put("post", foundHero); //add it to model for template to display
+            return new ModelAndView(model, "post-detail.hbs");
+        }, new HandlebarsTemplateEngine());
 
     }
 }
