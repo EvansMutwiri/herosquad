@@ -12,7 +12,15 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public"); //app executable method
 
-        get("/", (request, response) -> {
+        post("/posts/new", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+
+            String content = request.queryParams("content");
+            Hero newHero = new Hero(content);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/", (request, response) -> { //get all heros
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> posts = Hero.getAll();
             model.put("posts", posts);
@@ -20,11 +28,5 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/posts/new", (request, response) -> { //URL to make new post on POST route
-            Map<String, Object> model = new HashMap<>();
-            String content = request.queryParams("content");
-            Hero newHero = new Hero(content);
-            return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine());
     }
 }
