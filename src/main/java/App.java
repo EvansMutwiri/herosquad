@@ -13,7 +13,7 @@ public class App {
         staticFileLocation("/public"); //app executable method
 
         get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
+            Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> posts = Hero.getAll();
             model.put("posts", posts);
 
@@ -21,9 +21,9 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         post("/posts/new", (request, response) -> { //URL to make new post on POST route
-            Map<String, Object> model = new HashMap<String, Object>();
+            Map<String, Object> model = new HashMap<>();
             String content = request.queryParams("content");
-            Hero newPost = new Hero(content);
+            Hero newHero = new Hero(content);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
     }
