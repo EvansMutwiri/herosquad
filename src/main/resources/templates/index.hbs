@@ -1,0 +1,23 @@
+{{#partial "content"}}
+
+    <h1>Hero list!</h1>
+
+    {{#if posts}}
+    {{#each posts }}
+    <p>{{ content }}</p>
+    {{/each}}
+    {{else}}
+    <p>No heros found!</p>
+    {{/if}}
+
+    <p>Add a new Hero:</p>
+
+    <form class="form-group" action="/posts/new" method="post">
+        <label for="content">Create Hero</label>
+        <input id="content" name="content" type="text" required>
+
+        <button type="submit" class="btn btn-secondary">Add new Hero</button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs}}
