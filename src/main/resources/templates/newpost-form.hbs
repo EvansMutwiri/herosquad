@@ -1,0 +1,13 @@
+{{#partial "content"}}
+
+    <h1>Create new hero!</h1>
+
+    <form action="/posts/new" method="post">
+        <label for="content">Post Your Hero</label>
+        <input id="content" name="content" type="text">
+
+        <button type="submit" class="btn btn-secondary">Create</button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs}}

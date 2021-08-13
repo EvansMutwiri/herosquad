@@ -28,5 +28,13 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
+        //Create
+        get("/posts/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "newpost-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //Update
+
     }
 }
