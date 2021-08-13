@@ -53,5 +53,14 @@ public class App {
             return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
 
+        post("/posts/:id/update", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String newContent = req.queryParams("content");
+            int idOfHeroToEdit = Integer.parseInt(req.params("id"));
+            Hero editHero = Hero.findById(idOfHeroToEdit);
+
+            editHero.update(newContent);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
