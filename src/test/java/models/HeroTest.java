@@ -16,13 +16,13 @@ class HeroTest {
 
     @Test
     void NewHeroObjectGetsCorrectlyCreated_true() throws Exception {
-        Hero post = new Hero("Hero Nakamura");
+        Hero post = new Hero("Hero Nakamura", "power", "weakness", 10);
         assertEquals(true, post instanceof Hero);
     }
 
     @Test
     void NewHeroObjectInstantiatesWithContent_true() {
-        Hero post = new Hero("Hero Nakamura");
+        Hero post = new Hero("Hero Nakamura", "power", "weakness", 10);
         assertEquals("Hero Nakamura", post.getContent());
     }
 

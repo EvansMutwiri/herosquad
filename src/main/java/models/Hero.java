@@ -21,6 +21,9 @@ public class Hero {
         this.id = instances.size();
     }
 
+    public Hero(String hero_nakamura, String power, String weakness, int i) {
+    }
+
     public static void clearAllHeros() {
     }
 

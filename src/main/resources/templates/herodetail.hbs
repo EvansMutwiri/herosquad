@@ -1,19 +1,31 @@
 {{#partial "content"}}
-    <p>Content:</p>
-    <p>{{ post.content }}</p>
-    <h5>Created At:</h5>
-    <p> {{ post.createdAt }}</p>
-    <h5>Post status:</h5>
-    <p>
-        {{#if post.published }}
-            <span class="glyphicon glyphicon-star"></span>  Published
-        {{else}}
-            <i class="fas fa-space-shuttle"></i> Draft
-        {{/if}}
+
+{{/partial}}
+{{#partial "details"}}
+    <div class="cards__item card">
+        <div class="card-body">
+            <div class="d-flex">
+                <h5>Content:</h5>
+                <p>{{ post.content }}</p>
+            </div>
+            <div class="d-flex">
+                <h5>Powers:</h5>
+                <p>{{ post.power }}</p>
+            </div>
+            <div class="d-flex">
+                <h5>Age:</h5>
+                <p>{{ post.age }}</p>
+            </div>
+            <div class="d-flex">
+                <h5>Weakness:</h5>
+                <p>{{ post.weak }}</p>
+            </div>
+        </div>
 
         <a href="/posts/{{post.id}}/update">Edit this hero</a>
         <a class="btn btn-danger" href="/posts/{{post.id}}/delete">DELETE this post </a>
-    </p>
+        </p>
+    </div>
 {{/partial}}
 
 {{> layout.hbs}}

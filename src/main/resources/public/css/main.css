@@ -1,5 +1,12 @@
 .hero-text {
     font-family: 'Wide awake', sans-serif;
+    color: #ffff;
+}
+
+.nav {
+    font-family: 'Wide awake Black', sans-serif;
+        color: #ffff;
+        display: flex;
 }
 
 h1 {
@@ -7,7 +14,38 @@ h1 {
 }
 
 html,body {
-   background-color: #8BC6EC;
-   background-image: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+   background-color: black;
+   font-family: 'Wide awake', sans-serif;
 }
 
+.content {
+
+}
+h2 {
+    padding: 30px;
+}
+.cards {
+    font-family: 'Wide awake Black', sans-serif;
+    color: #ffff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.cards__item {
+    flex-basis: 25%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.img-hover-zoom {
+  height: 300px;
+}
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.4);
+}

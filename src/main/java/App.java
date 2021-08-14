@@ -16,6 +16,10 @@ public class App {
             Map<String, Object> model = new HashMap<>();
 
             String content = request.queryParams("content");
+            String power = request.queryParams("power");
+            String age = request.queryParams("age");
+            Hero newAge = new Hero(age);
+            Hero newPower = new Hero(power);
             Hero newHero = new Hero(content);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
