@@ -3,7 +3,7 @@
         <h1>Edit this Hero!</h1>
         <form action="/posts/{{editHero.id}}/update" method="post">
             <label for="content">Edit this hero</label>
-            <input id="content" name="content" type="text" value="{{editHero.content}}">
+            <input id="content" name="content" type="text" value="{{editHero.content}}" required>
             <button type="submit" class="btn btn-secondary">Go!</button>
 
         </form>
@@ -13,7 +13,7 @@
 
         <form action="/posts/new" method="post">
             <label for="content">Hero name</label>
-            <input id="content" name="content" type="text">
+            <input id="content" name="content" type="text" required>
 
             <button type="submit" class="btn btn-secondary">Go!</button>
 

@@ -2,6 +2,9 @@ package models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.time.format.*;
+
+import static java.time.format.DateTimeFormatter.*;
 
 public class Hero {
     private String content;
@@ -18,6 +21,9 @@ public class Hero {
         this.id = instances.size();
     }
 
+    public static void clearAllHeros() {
+    }
+
     public String getContent() {
         return content;
     }
@@ -26,7 +32,7 @@ public class Hero {
         return instances;
     }
 
-    public static void clearAllHeros() {
+    public static void clearAllHeroes() {
         instances.clear();
     }
 

@@ -16,14 +16,14 @@ class HeroTest {
 
     @Test
     void NewHeroObjectGetsCorrectlyCreated_true() throws Exception {
-        Hero post = new Hero("Hero Nakamora");
+        Hero post = new Hero("Hero Nakamura");
         assertEquals(true, post instanceof Hero);
     }
 
     @Test
     void NewHeroObjectInstantiatesWithContent_true() {
-        Hero post = new Hero("Hero Nakamora");
-        assertEquals("Hero Nakamora", post.getContent());
+        Hero post = new Hero("Hero Nakamura");
+        assertEquals("Hero Nakamura", post.getContent());
     }
 
     @AfterEach
@@ -33,7 +33,7 @@ class HeroTest {
 
     @Test
     public void AllHerosAreCorrectlyReturned_true() {
-        Hero post = new Hero("Hero Nakamora");
+        Hero post = new Hero("Hero Nakamura");
         Hero otherHero = new Hero("Captain Ameruca");
         assertTrue(Hero.getAll().contains(post));
         assertTrue(Hero.getAll().contains(otherHero));
@@ -100,9 +100,9 @@ class HeroTest {
     @Test
     public void deleteDeletesASpecificHero() throws Exception {
         Hero post = setupNewHero();
-        Hero otherHero = new Hero("How to pair successfully");
+        Hero otherHero = new Hero("Hero");
         post.deleteHero();
-        assertEquals(1, Hero.getAll().size()); //one is left
-        assertEquals(Hero.getAll().get(0).getId(), 2); //the one that was deleted has the id of 2. Why do we care?
+        assertEquals(1, Hero.getAll().size());
+        assertEquals(Hero.getAll().get(0).getId(), 2);
     }
 }

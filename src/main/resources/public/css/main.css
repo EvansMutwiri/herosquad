@@ -1,3 +1,13 @@
 .hero-text {
-    font-family: 'Astro World', sans-serif;
+    font-family: 'Wide awake', sans-serif;
 }
+
+h1 {
+    font-size: 4em;
+}
+
+html,body {
+   background-color: #8BC6EC;
+   background-image: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+}
+
