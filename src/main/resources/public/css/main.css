@@ -6,9 +6,9 @@
 .nav {
     font-family: 'Wide awake Black', sans-serif;
         color: #ffff;
-        display: flex;
+        text-decoration: underline;
+        font-size: 20px;
 }
-
 h1 {
     font-size: 4em;
 }
@@ -33,19 +33,24 @@ h2 {
     margin-right: -8px;
 }
 
-.cards__item {
-    flex-basis: 25%;
-    padding-left: 8px;
-    padding-right: 8px;
-}
 
 .img-hover-zoom {
   height: 300px;
 }
 .img-hover-zoom img {
-  transition: transform .5s ease;
+  transition: transform .5s, filter 1.5s ease-in-out;
+    filter: grayscale(100%);
 }
 
 .img-hover-zoom:hover img {
-  transform: scale(1.4);
+  filter: grayscale(0);
+    transform: scale(1.1) translateY(-10%);
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90%;
 }
