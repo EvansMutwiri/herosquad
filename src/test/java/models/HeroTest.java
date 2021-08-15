@@ -16,19 +16,19 @@ class HeroTest {
 
     @Test
     void NewHeroObjectGetsCorrectlyCreated_true() throws Exception {
-        Hero post = new Hero("Hero Nakamura", "power", "weakness", 10);
+        Hero post = new Hero("Hero Nakamura");
         assertEquals(true, post instanceof Hero);
     }
 
     @Test
     void NewHeroObjectInstantiatesWithContent_true() {
-        Hero post = new Hero("Hero Nakamura", "power", "weakness", 10);
+        Hero post = new Hero("Hero Nakamura");
         assertEquals("Hero Nakamura", post.getContent());
     }
 
     @AfterEach
     void tearDown() {
-        Hero.clearAllHeros();
+        Hero.clearAllHeroes();
     }
 
     @Test
@@ -65,7 +65,7 @@ class HeroTest {
 
     @Test
     public void getId_postsInstantiateWithAnID_1() throws Exception{
-        Hero.clearAllHeros();
+        Hero.clearAllHeroes();
         Hero myHero = new Hero("Hero Nakamura");
         assertEquals(1, myHero.getId());
     }

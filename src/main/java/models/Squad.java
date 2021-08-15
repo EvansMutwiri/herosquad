@@ -11,6 +11,7 @@ public class Squad {
     private static ArrayList<Squad> instances = new ArrayList<>();
     private int mId;
     private List<Hero> mHeroes;
+    private Object Hero;
 
     public Squad(String name,String cause,int maximum){
         this.name =name;
@@ -47,8 +48,7 @@ public class Squad {
     public List<Hero> getHeroes() {
         return mHeroes;
     }
-    //method to add hero to the squad
-    public void addHero(Hero hero){
-        mHeroes.add(hero);
+    public void addHero(Hero post){
+        mHeroes.add(post);
     }
 }
