@@ -1,3 +1,14 @@
+html,body {
+   background-color: black;
+   background-image: url("https://media.giphy.com/media/9bTjZrytydVRK/giphy.gif");
+   font-family: 'Wide awake', sans-serif;
+}
+
+body:after {
+  content: '';
+  display: flex;
+  clear: both;
+}
 .hero-text {
     font-family: 'Wide awake', sans-serif;
     color: #ffff;
@@ -13,7 +24,7 @@
     margin-top: 10vh;
 }
 .card{
-    background-color: #041B2D;
+    background-color: #041b2db2;;
     padding: 10px;
 }
 .navbar a {
@@ -24,17 +35,6 @@ a:hover{
 }
 h1 {
     font-size: 4em;
-}
-
-html,body {
-   background-color: black;
-   font-family: 'Wide awake', sans-serif;
-}
-
-body:after {
-  content: '';
-  display: flex;
-  clear: both;
 }
 
 h2 {
