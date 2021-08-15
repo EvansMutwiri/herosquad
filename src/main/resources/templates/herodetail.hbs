@@ -2,7 +2,7 @@
 
 {{/partial}}
 {{#partial "details"}}
-    <div class="cards__item card">
+    <div class="cards__item card card">
         <div class="card-body">
             <div class="d-flex">
                 <h5>Content:</h5>
@@ -25,6 +25,11 @@
         <a href="/posts/{{post.id}}/update">Edit this hero</a>
         <a class="btn btn-danger" href="/posts/{{post.id}}/delete">DELETE this post </a>
         </p>
+
+        <footer class="footer content-wrapper">
+            <div class="container">
+                <p class="text-muted"><a class="btn btn-warning" href="/posts/delete">DELETE YOUR HEROES</a></p>
+            </div>
     </div>
 {{/partial}}
 
