@@ -38,6 +38,11 @@ public class App {
             return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/squad",(request, response) -> {
+            Map<String,Object> model = new HashMap<>();
+            return new ModelAndView(model,"squadform.hbs");
+        },new HandlebarsTemplateEngine());
+
         //Read
         get("/posts/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

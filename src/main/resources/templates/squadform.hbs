@@ -1,0 +1,26 @@
+{{#partial "content"}}
+        <div class="card">
+            <h2>Add a new SQUAD!</h2>
+
+            <form action="/posts/new" method="post" class="form-group form">
+                <div class="mb-3">
+                    <label for="sname">Squad name</label>
+                    <input class="form-control" id="sname" name="sname" type="text" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cause">Mission</label>
+                    <input class="form-control" id="cause" name="cause" type="text" placeholder="eg. save earth" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="maximum">Max Members</label>
+                    <input class="form-control" id="maximum" name="maximum" type="number" required>
+                </div>
+                <button type="submit" class="btn btn-secondary">Go! \uD83E\uDDB8\u200D\u2642\uFE0F </button>
+            </form>
+        </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
