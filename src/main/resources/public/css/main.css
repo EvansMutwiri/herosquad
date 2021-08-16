@@ -1,6 +1,7 @@
 html,body {
    background-color: black;
-   background-image: url("https://media.giphy.com/media/9bTjZrytydVRK/giphy.gif");
+   background-image: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+   background-position: center;
    font-family: 'Wide awake', sans-serif;
 }
 
@@ -24,8 +25,11 @@ body:after {
     margin-top: 10vh;
 }
 .card{
-    background-color: #041b2db2;;
+    background-color: #041b2d91;
     padding: 10px;
+    box-shadow: 6px 2px 7px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 6px 2px 7px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 6px 2px 7px 0px rgba(0,0,0,0.53);
 }
 .navbar a {
     color: #492059;

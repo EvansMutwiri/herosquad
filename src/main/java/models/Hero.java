@@ -1,5 +1,7 @@
 package models;
 
+import com.sun.jdi.IntegerValue;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.time.format.*;
@@ -7,54 +9,50 @@ import java.time.format.*;
 import static java.time.format.DateTimeFormatter.*;
 
 public class Hero {
-    private String content;
+    private String name;
     private static ArrayList<Hero> instances = new ArrayList<>();
-    private boolean published;
-    private LocalDateTime createdAt;
+    private String age;
+    private String specialPower;
+    private String weakness;
     private int id;
 
-    public Hero(String content) {
-        this.content = content;
-        this.published = false;
-        this.createdAt = LocalDateTime.now();
+    public Hero(String name, String age, String specialPower, String weakness) {
+        this.name = name;
+        this.age = age;
+        this.specialPower = specialPower;
+        this.weakness = weakness;
         instances.add(this);
         this.id = instances.size();
     }
 
-    public String getContent() {
-        return content;
+    public String getName(){
+        return this.name;
+    }
+    public String getAge(){
+        return this.age;
+    }
+    public String getPower(){
+        return this.specialPower;
+    }
+    public String getWeakness(){
+        return this.weakness;
+    }
+
+    public static void clearAllHeroes() {
     }
 
     public static ArrayList<Hero> getAll(){
         return instances;
     }
 
-    public static void clearAllHeroes() {
-        instances.clear();
-    }
-
-    public boolean getPublished() {
-        return this.published;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public static Hero findById(int id){
         return instances.get(id-1);
     }
 
-    public void update(String content) {
-        this.content = content;
+    public void update(String newContent) {
     }
 
     public void deleteHero() {
-        instances.remove(id-1);
     }
 }
 

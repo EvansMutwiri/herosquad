@@ -11,7 +11,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 public class App {
     public static void main(String[] args) {
-
+//heroku
         ProcessBuilder processBuilder = new ProcessBuilder();
         Integer port;
         if (processBuilder.environment().get("PORT") != null) {
@@ -20,17 +20,17 @@ public class App {
             port =4567;
         }
         port(port);
+
         staticFileLocation("/public"); //app executable method
 
         post("/posts/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
 
-            String content = request.queryParams("content");
-            String power = request.queryParams("power");
+            String name = request.queryParams("name");
+            String specialPower = request.queryParams("specialPower");
             String age = request.queryParams("age");
-            Hero newAge = new Hero(age);
-            Hero newPower = new Hero(power);
-            Hero newHero = new Hero(content);
+            String weakness = request.queryParams("weakness");
+            Hero newHero = new Hero(name, age, specialPower, weakness);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 

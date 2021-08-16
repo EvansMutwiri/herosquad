@@ -76,9 +76,9 @@ class SquadTest {
     }
 
     @Test
-    public void addHero() {
+    public void addHero_toSquad_true() {
         Squad squad = new Squad("fantastic 4", "save the world", 4);
-        Hero post = new Hero("Hero Nakamura");
+        Hero post = new Hero("Hero Nakamura", "12", "time travel", "noise");
         squad.addHero(post);
         assertEquals(true, squad.getHeroes().contains(post));
     }
