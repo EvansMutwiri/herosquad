@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{#block "title"}}hero squad{{/block}}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="http://fonts.cdnfonts.com/css/matt-smith-doctor-who" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/wide-awake" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel='stylesheet' href='/main.css'>
+
+</head>
+<body>
+
+<div class="navbar" role="navigation">
+    <div class="navbar-header">
+        <a type="button" class="navbar-toggle" data-toggle="collapse" data-target="#heronav">
+            <img src="/images/ironman.gif" alt="hero" width="36px">
+        </a>
+<!--        <span class="navbar-brand">Hero Squad</span>-->
+    </div>
+    <div class="navbar" id="heronav">
+        <ul class="nav navbar-nav">
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/">See All Heroes</a></li>
+            <li ><a href="/posts/new">Create your Hero</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container content-wrapper row">
+    <!--begin template-->
+    <div class="content col">
+        <div class="cards row">
+        {{#block "content"}}
+
+        {{/block}}
+        </div>
+        {{#block "details"}}
+
+        {{/block}}
+    </div>
+    <div class="page-header col img-hover-zoom d-flex-end">
+        <img src="/images/heroes.png" alt="my heroes" width="50%">
+        <h1 class="hero-text">Welcome to Hero Squad</h1>
+    </div>
+</div>
+<!--end of template-->
+{{#block "footer"}}
+
+    <footer class="footer content-wrapper">
+        <div class="container">
+            <p class="text-muted"><a class="btn btn-warning" href="/posts/delete">DELETE YOUR HEROES</a></p>
+        </div>
+    </footer>
+    </body>
+    </html>
+{{/block}}

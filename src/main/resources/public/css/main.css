@@ -1,0 +1,56 @@
+.hero-text {
+    font-family: 'Wide awake', sans-serif;
+    color: #ffff;
+}
+
+.nav {
+    font-family: 'Wide awake Black', sans-serif;
+        color: #ffff;
+        text-decoration: underline;
+        font-size: 20px;
+}
+h1 {
+    font-size: 4em;
+}
+
+html,body {
+   background-color: black;
+   font-family: 'Wide awake', sans-serif;
+}
+
+.content {
+
+}
+h2 {
+    padding: 30px;
+}
+.cards {
+    font-family: 'Wide awake Black', sans-serif;
+    color: #ffff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+
+.img-hover-zoom {
+  height: 300px;
+}
+.img-hover-zoom img {
+  transition: transform .5s, filter 1.5s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.img-hover-zoom:hover img {
+  filter: grayscale(0);
+    transform: scale(1.1) translateY(-10%);
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90%;
+}
