@@ -14,95 +14,38 @@ class HeroTest {
     void setUp() {
     }
 
-    @Test
-    void NewHeroObjectGetsCorrectlyCreated_true() throws Exception {
-        Hero post = new Hero("Hero Nakamura", "power", "weakness", 10);
-        assertEquals(true, post instanceof Hero);
-    }
-
-    @Test
-    void NewHeroObjectInstantiatesWithContent_true() {
-        Hero post = new Hero("Hero Nakamura", "power", "weakness", 10);
-        assertEquals("Hero Nakamura", post.getContent());
-    }
-
     @AfterEach
     void tearDown() {
-        Hero.clearAllHeros();
+        Hero.clearAllHeroes();
+    }
+    @Test
+    public void Hero_instantiateCorrectly_true(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertTrue( hero instanceof Hero);
     }
 
     @Test
-    public void AllHerosAreCorrectlyReturned_true() {
-        Hero post = new Hero("Hero Nakamura");
-        Hero otherHero = new Hero("Captain Ameruca");
-        assertTrue(Hero.getAll().contains(post));
-        assertTrue(Hero.getAll().contains(otherHero));
+    public void Hero_instantiates_NameString(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertEquals("boss",hero.getName());
     }
 
     @Test
-    public void AllHerosContainsAllHeros_true() {
-        Hero post = new Hero("Hero Nakamura");
-        Hero otherHero = new Hero("Captain Ameruca");
-        assertTrue(Hero.getAll().contains(post));
-        assertTrue(Hero.getAll().contains(otherHero));
+    public void Hero_instantiatesWithAge_String(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertEquals("1", hero.getAge());
     }
 
     @Test
-    public void getPublished_isFalseAfterInstantiation_false() throws Exception {
-        Hero myHero = new Hero("Hero Nakamura");
-        assertEquals(false, myHero.getPublished());
+    public void Hero_instantiateswithPower_String(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertEquals("fire", hero.getPower());
     }
 
     @Test
-    public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception{
-        Hero myHero = setupNewHero();
-        assertEquals(LocalDateTime.now().getDayOfWeek(), myHero.getCreatedAt().getDayOfWeek());
+    public void Hero_instantiatesWithWeakness_String(){
+        Hero hero = new Hero("","","","");
+        assertEquals("", hero.getWeakness());
     }
 
-    public Hero setupNewHero(){
-        return new Hero("Hero Nakamura");
-    }
-
-    @Test
-    public void getId_postsInstantiateWithAnID_1() throws Exception{
-        Hero.clearAllHeros();
-        Hero myHero = new Hero("Hero Nakamura");
-        assertEquals(1, myHero.getId());
-    }
-
-    @Test
-    public void findReturnsCorrectHero() throws Exception {
-        Hero post = setupNewHero();
-        assertEquals(1, Hero.findById(post.getId()).getId());
-    }
-
-    @Test
-    public void findReturnsCorrectHeroWhenMoreThanOneHeroExists() throws Exception {
-        Hero post = setupNewHero();
-        Hero otherHero = new Hero("Captain Ameruca");
-        assertEquals(2, Hero.findById(otherHero.getId()).getId());
-    }
-
-    @Test
-    public void updateChangesHero() throws Exception {
-        Hero post = setupNewHero();
-        String formerContent = post.getContent();
-        LocalDateTime formerDate = post.getCreatedAt();
-        int formerId = post.getId();
-
-        post.update("Some hero");
-
-        assertEquals(formerId, post.getId());
-        assertEquals(formerDate, post.getCreatedAt());
-        assertNotEquals(formerContent, post.getContent());
-    }
-
-    @Test
-    public void deleteDeletesASpecificHero() throws Exception {
-        Hero post = setupNewHero();
-        Hero otherHero = new Hero("Hero");
-        post.deleteHero();
-        assertEquals(1, Hero.getAll().size());
-        assertEquals(Hero.getAll().get(0).getId(), 2);
-    }
 }

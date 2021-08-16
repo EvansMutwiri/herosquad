@@ -1,0 +1,22 @@
+{{#partial "content"}}
+
+    <h2>Squads</h2>
+
+    {{#if squads}}
+        {{#each squads}}
+            <div class="list card">
+                <ul>
+                    <li>Squad Name:  <span >{{name}}</span></li>
+                    <li>Cause:    <span> {{cause}}</span></li>
+                     <li>Maximum:   <span>{{maximum}}</span></li>
+                </ul>
+
+            </div>
+        {{/each}}
+        <a class="btn hover_1" href="/posts/new">Add Hero</a>
+        <a class="btn hover_1" href="/squad/list">View heroes </a>
+    {{else}}
+        <p class="alert alert-warning" >No Squads yet!</p>
+    {{/if}}
+{{/partial}}
+{{>layout.hbs}}
