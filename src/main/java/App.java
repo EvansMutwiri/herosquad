@@ -34,7 +34,7 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/", (request, response) -> { //get all heros
+        get("/", (request, response) -> { //get all heroes
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> posts = Hero.getAll();
             model.put("posts", posts);

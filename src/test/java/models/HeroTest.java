@@ -24,4 +24,28 @@ class HeroTest {
         assertTrue( hero instanceof Hero);
     }
 
+    @Test
+    public void Hero_instantiates_NameString(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertEquals("boss",hero.getName());
+    }
+
+    @Test
+    public void Hero_instantiatesWithAge_String(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertEquals("1", hero.getAge());
+    }
+
+    @Test
+    public void Hero_instantiateswithPower_String(){
+        Hero hero = new Hero("boss","1","fire","temper");
+        assertEquals("fire", hero.getPower());
+    }
+
+    @Test
+    public void Hero_instantiatesWithWeakness_String(){
+        Hero hero = new Hero("","","","");
+        assertEquals("", hero.getWeakness());
+    }
+
 }
