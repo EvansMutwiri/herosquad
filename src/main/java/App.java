@@ -31,6 +31,13 @@ public class App {
             String age = request.queryParams("age");
             String weakness = request.queryParams("weakness");
             Hero newHero = new Hero(name, age, specialPower, weakness);
+            model.put("hero",newHero);
+
+//            model.put("name", name);
+//            model.put("Powers", specialPower);
+//            model.put("age", age);
+//            model.put("weakness", weakness);
+
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -91,11 +98,14 @@ public class App {
 
         post("/posts/:id/update", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            String newContent = req.queryParams("content");
+            String newName = req.queryParams("name");
+            String newWeakness = req.queryParams("weakness");
+            String newSpecialPower = req.queryParams("specialPower");
+            String newAge = req.queryParams("age");
             int idOfHeroToEdit = Integer.parseInt(req.params("id"));
             Hero editHero = Hero.findById(idOfHeroToEdit);
-
-            editHero.update(newContent);
+            editHero.update(newName,newAge,newSpecialPower,newWeakness);
+//          editHero.update(newContent);
             return new ModelAndView(model, "edited.hbs");
         }, new HandlebarsTemplateEngine());
 

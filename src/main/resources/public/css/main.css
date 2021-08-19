@@ -1,3 +1,7 @@
+@import url('http://fonts.cdnfonts.com/css/wide-awake');
+* {
+   box-sizing: content-box;
+}
 html,body {
    background-color: black;
    background-image: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
@@ -28,8 +32,6 @@ body:after {
     background-color: #041b2d91;
     padding: 10px;
     box-shadow: 6px 2px 7px 0px rgba(0,0,0,0.53);
-    -webkit-box-shadow: 6px 2px 7px 0px rgba(0,0,0,0.53);
-    -moz-box-shadow: 6px 2px 7px 0px rgba(0,0,0,0.53);
 }
 .navbar a {
     color: #492059;
@@ -63,7 +65,7 @@ h2 {
 
 .img-hover-zoom:hover img {
   filter: grayscale(0);
-    transform: scale(1.1) translateY(-5%);
+    transform: scale(1.05) translateY(-2%);
 }
 
 .content-wrapper {
@@ -97,4 +99,8 @@ a:before, a:after {
 }
 .hover-1:hover:before {
   transform: scaleX(1);
+}
+
+#hero-detail {
+  color: #ffff;
 }
