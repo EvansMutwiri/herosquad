@@ -48,4 +48,10 @@ class HeroTest {
         assertEquals("", hero.getWeakness());
     }
 
+    @Test
+    public void heroInstantiateWithId() throws Exception {
+        Hero hero = new Hero("","","","");
+        assertEquals(1, hero.getId());
+    }
+
 }

@@ -33,20 +33,31 @@ public class Hero {
     }
 
     public static void clearAllHeroes() {
+        instances.clear();
     }
 
     public static ArrayList<Hero> getAll(){
         return instances;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public static Hero findById(int id){
         return instances.get(id-1);
     }
 
-    public void update(String newContent) {
+    public void update (String name, String age, String specialPower, String weakness) {
+        this.name = name;
+        this.age = age;
+        this.specialPower = specialPower;
+        this.weakness = weakness;
+
     }
 
     public void deleteHero() {
+        instances.remove(id-1);
     }
 }
 

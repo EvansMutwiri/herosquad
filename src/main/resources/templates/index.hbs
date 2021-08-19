@@ -2,10 +2,9 @@
 
     <div class="card">
         <h2 class="card-title">Hero list!    </h2>
-
         {{#if posts}}
             {{#each posts }}
-                <p>{{ content }}  <a href="/posts/{{id}}">read more...</a></p>
+                <p>{{name}}  <a href="/posts/{{id}}">details</a></p>
             {{/each}}
         {{else}}
             <p class="alert alert-warning text-center">No heroes found!</p> <br> <a class="mt-2 text-center hover-1" href="/posts/new">  Create hero here</a>

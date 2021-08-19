@@ -2,9 +2,27 @@
     {{#if editHero}}
         <div class="card">
             <h1>Edit this Hero!</h1>
+
             <form action="/posts/{{editHero.id}}/update" method="post">
-                <label for="content">Edit this hero</label>
-                <input class="form-control" id="content" name="content" type="text" value="{{editHero.content}}" required>
+                <div class="mb-3">
+                    <label for="name">Hero name</label>
+                    <input class="form-control" id="name" value="{{editHero.name}}" name="name" type="text" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="specialPower">Hero power</label>
+                    <input class="form-control" id="specialPower" value="{{editHero.specialPower}}" name="specialPower" type="text" placeholder="eg. time travel" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="weakness">Hero weakness</label>
+                    <input class="form-control"value="{{editHero.weakness}}"  id="weakness" name="weakness" type="text" placeholder="eg. fire" required>
+                </div>
+
+                <div class="md-3">
+                    <label for="age">Hero Age</label>
+                    <input class="form-control" id="age"value="{{editHero.age}}" name="age" type="number" required>
+                </div>
                 <button type="submit" class="btn btn-secondary">Go!</button>
             </form>
         </div>
